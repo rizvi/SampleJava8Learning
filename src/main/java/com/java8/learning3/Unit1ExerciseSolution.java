@@ -8,8 +8,11 @@ import java.util.List;
 public class Unit1ExerciseSolution {
 
 	public static void main(String[] args) {
-		List<Person> people = Arrays.asList(new Person("Charles", "Dickens", 60), new Person("Lewis", "Carrol", 42),
-				new Person("Thomas", "Carlyle", 51), new Person("Charlotte", "Bronte", 45),
+		List<Person> people = Arrays.asList(
+				new Person("Charles", "Dickens", 60),
+				new Person("Lewis", "Carrol", 42),
+				new Person("Thomas", "Carlyle", 51),
+				new Person("Charlotte", "Bronte", 45),
 				new Person("Mathew", "Arnold", 39));
 
 		// Step1: Sort list by last name

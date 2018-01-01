@@ -8,8 +8,11 @@ import java.util.List;
 public class Unit1ExcerciseSolWithAnnonymous {
 
 	public static void main(String[] args) {
-		List<Person> people = Arrays.asList(new Person("Charles", "Dickens", 60), new Person("Lewis", "Carrol", 42),
-				new Person("Thomas", "Carlyle", 51), new Person("Charlotte", "Bronte", 45),
+		List<Person> people = Arrays.asList(
+				new Person("Charles", "Dickens", 60),
+				new Person("Lewis", "Carrol", 42),
+				new Person("Thomas", "Carlyle", 51),
+				new Person("Charlotte", "Bronte", 45),
 				new Person("Mathew", "Arnold", 39));
 
 		// Step1: Sort list by last name
@@ -34,6 +37,18 @@ public class Unit1ExcerciseSolWithAnnonymous {
 			@Override
 			public boolean test(Person p) {
 				return p.getLastName().startsWith("C");
+			}
+		});
+
+		// Step4: Create a method that prints all people that have first name
+		// beginning with C
+		System.out.println("****************************************************");
+		System.out.println("Printing all persons with first name beginning with C");
+		printConditionally(people, new Condition() {
+
+			@Override
+			public boolean test(Person p) {
+				return p.getFirstName().startsWith("C");
 			}
 		});
 	}
