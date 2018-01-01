@@ -18,42 +18,27 @@ public class Unit1ExcerciseLambdaSolution {
 
 		// Step2: Create a method that prints all elements in the list
 		System.out.println("Printing all persons:");
-		printAll(people);
+		printConditionally(people, p -> true);
 
 		// Step3: Create a method that prints all people that have last name
 		// beginning with C
 		System.out.println("****************************************************");
 		System.out.println("Printing all persons with last name beginning with C");
-		printLastNameBeginningWithC(people);
+		printConditionally(people, p -> p.getLastName().startsWith("C"));
 
-		// Step4: Create a method that prints all people that have last name
+		// Step4: Create a method that prints all people that have first name
 		// beginning with C
 		System.out.println("****************************************************");
 		System.out.println("Printing all persons with first name beginning with C");
-		printFirstNameBeginningWithC(people);
+		printConditionally(people, p -> p.getFirstName().startsWith("C"));
 	}
 
-	private static void printFirstNameBeginningWithC(List<Person> people) {
+	private static void printConditionally(List<Person> people, Condition condition) {
 		for (Person p : people) {
-			if (p.getFirstName().startsWith("C")) {
+			if (condition.test(p)) {
 				System.out.println(p);
 			}
 		}
 	}
-
-	private static void printLastNameBeginningWithC(List<Person> people) {
-		for (Person p : people) {
-			if (p.getLastName().startsWith("C")) {
-				System.out.println(p);
-			}
-		}
-	}
-
-	private static void printAll(List<Person> people) {
-		for (Person p : people) {
-			System.out.println(p);
-		}
-
-	}
-
 }
+
